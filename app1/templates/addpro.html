@@ -1,0 +1,114 @@
+{% load static %}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Minimal login form Responsive Widget Template : W3Layouts</title>
+
+    <!-- Meta tags 
+        -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet 
+        -->
+    <link rel="stylesheet" href={% static "CSS/style.css" %} type="text/css" media="all" />
+
+</head>
+
+<body>
+    <div class="w3l-loginblock signinform">
+        <div class="logo">
+            <a class="brand-logo" href="index.html">Minimal login form</a>
+        </div>
+        <!-- main content -->
+            <div class="row map-content-9">
+                <div class="info-grids">
+                    <form  method="post" class="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-grid">
+                            <div class="input-field">
+                                <label>Product name</label>
+                                <input type="text" name="cname" id="Password" placeholder="Email" >
+                            </div>
+                            <div class="input-field">
+                                <label>Category</label>
+                                <select name="cat" id="">
+                                    {% for i in cat  %}
+                                    <option value={{i.pk}}>{{i.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>Price</label>
+                            <input type="text" name="price" placeholder="Username" required="">
+                            </div>
+                            <div class="input-field">
+                                <label>Description</label>
+                                <textarea name="des" id="" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="input-field">
+                                <label>Stock:</label>
+                                <input type="number" name="stock" id="Password" placeholder="Password"  required="">
+                            </div>
+                            <div>
+                                <label>Image :</label>
+                                <input type="file" name="image" id="Password" placeholder="Password"  required="">
+                            </div>
+                            {% if forvendor %}
+                            <div class="input-field">
+                                <label>Type of business:</label>
+                                <input type="text" name="tob" id="Password" placeholder=""  required="">
+                            </div>
+                            {% endif %}
+                            
+                            {%if error %}
+                                <p style ="color: red;" >{{error}}</p>
+                            {%endif%}
+                        <div class="input-field">
+                        </div>
+                        <label class="check-remaind">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <p class="remember">Remember Me</p>
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-style">Register Now</button>
+                        
+                        <label class="check-remaind">Want to add new category? Click Bellow button</label>
+                        <a href={% url "addcat" %}><input type="submit" class="btn btn-primary btn-style">Add category</a>
+                    </form>
+                </div>
+               {% if save %}
+               <script>
+                alert("{{save}}")
+               </script>
+               {% endif %}
+               {% if email %}
+               <script>
+                alert("{{email}}")
+               </script>
+               {% endif %}
+               {% if pass %}
+               <script>
+                alert("{{pass  }}")
+               </script>
+               {% endif %}
+        <!-- //main content -->
+        <!-- footer -->
+        <!-- footer -->
+    </div>
+
+    <!-- fontawesome v5-->
+    <script src={% static "JS/fontawesome.js" %}></script>
+
+</body>
+
+</html>

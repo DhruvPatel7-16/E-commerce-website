@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Address</th>
+  </tr>
+  {% comment %} {% for i in data %} {% endcomment %}
+  <tr>
+    <td>{{data.name}}</td>
+    <td>{{data.email}}</td>
+    <td>{{data.Mobilenumber}}</td>
+    <td>{{data.password}}</td>
+    <td>{{data.Address}}</td>
+  </tr>
+  {% comment %} {% endfor %} {% endcomment %}
+</table>
+
+</body>
+</html>

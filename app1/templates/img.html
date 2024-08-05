@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">Enter Category name: </label>
+        <input type="text" placeholder="Enter name" name="uname"><br>
+
+        <label for="">choose image for your pc :</label>
+        <input type="file" name="img">
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" >
+        {% csrf_token %}
+        <label for="">Enter name: </label>
+        <input type="text" placeholder="Enter name" name="uname" value="{{feed.name}}"><br>
+
+        <label for="">Enter text</label>
+        <input type="text" placeholder="Enter any text" name="email" value="{{feed.email}}"><br>
+
+        <label for="">feedback</label>
+        <textarea name="feedback" id="" cols="30" rows="10"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

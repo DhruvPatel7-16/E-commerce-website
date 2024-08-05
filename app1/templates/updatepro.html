@@ -1,0 +1,105 @@
+{% load static %}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Minimal login form Responsive Widget Template : W3Layouts</title>
+
+    <!-- Meta tags 
+        -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet 
+        -->
+    <link rel="stylesheet" href={% static "CSS/style.css" %} type="text/css" media="all" />
+
+</head>
+
+<body>
+    <div class="w3l-loginblock signinform">
+        <div class="logo">
+            <a class="brand-logo" href="index.html">Minimal login form</a>
+        </div>
+        <!-- main content -->
+            <div class="row map-content-9">
+                <div class="info-grids">
+                    <form  method="post" class="" enctype ="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-grid">
+                            <div class="input-field">
+                                <label> Product name</label>
+                                <input type="text" name="pname" id="email" placeholder="Username" required="" value = "{{a.name}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Product price</label>
+                                <input type="text" name="price" id="Password" placeholder="Email" value = "{{a.price}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Qty</label>
+                                <input type="number" name="qty" id="Password" placeholder="Contact No"  required="" value = "{{a.qty}}">
+                            </div>
+                            <div class="input-field">
+                                <label>Discription</label>
+                                <textarea name="dis" id="" cols="30" rows="10" placeholder="Address">{{a.discription}}</textarea>
+                            </div>
+                            <div class="input-field">
+                                <label>Image</label>
+                                <input type="file" name="img" id="Password" placeholder="Contact No"  required="" value = "{{a.image}}">
+                            </div>
+
+                            {% if forvendor %}
+                            <div class="input-field">
+                                <label>Type of business:</label>
+                                <input type="text" name="tob" id="Password" placeholder=""  required="">
+                            </div>
+                            {% endif %}
+                            
+                            {%if error %}
+                                <p style ="color: red;" >{{error}}</p>
+                            {%endif%}
+                        <div class="input-field">
+                        </div>
+                        <label class="check-remaind">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <p class="remember">Remember Me</p>
+
+                        </label>
+                        <button type="submit" class="btn btn-primary btn-style">Register Now</button>
+                    </form>
+                </div>
+               {% if save %}
+               <script>
+                alert("{{save}}")
+               </script>
+               {% endif %}
+               {% if email %}
+               <script>
+                alert("{{email}}")
+               </script>
+               {% endif %}
+               {% if pass %}
+               <script>
+                alert("{{pass  }}")
+               </script>
+               {% endif %}
+        <!-- //main content -->
+        <!-- footer -->
+        <!-- footer -->
+    </div>
+
+    <!-- fontawesome v5-->
+    <script src={% static "JS/fontawesome.js" %}></script>
+
+</body>
+
+</html>
